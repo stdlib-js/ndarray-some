@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-11-21)
+## Unreleased (2025-12-26)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`daf2cc8`](https://github.com/stdlib-js/stdlib/commit/daf2cc847c77117f4c5ae4e5e99ae224bb592edc) - **refactor:** add writable parameter to `ndarray/base/spread-dimensions` [(#9370)](https://github.com/stdlib-js/stdlib/pull/9370) _(by Muhammad Haris, Athan Reines)_
 -   [`a2fd4d6`](https://github.com/stdlib-js/stdlib/commit/a2fd4d6929c7af4f33ebe97d53fec4b7a9bcbf33) - **feat:** add `ndarray/some` [(#8514)](https://github.com/stdlib-js/stdlib/pull/8514) _(by Muhammad Haris, Athan Reines)_
 
 </details>
