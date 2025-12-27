@@ -41,38 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-some
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-some = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var some = require( 'path/to/vendor/umd/ndarray-some/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.some;
-})();
-</script>
+var some = require( '@stdlib/ndarray-some' );
 ```
 
 #### some( x, n\[, options] )
@@ -88,10 +82,7 @@ var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
 
 // Perform reduction:
 var out = some( x, 3 );
-// returns <ndarray>
-
-var v= out.get();
-// returns true
+// returns <ndarray>[ true ]
 ```
 
 The function accepts the following arguments:
@@ -109,7 +100,6 @@ By default, the function performs a reduction over all elements in a provided [`
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -121,17 +111,13 @@ var opts = {
 
 // Perform reduction:
 var out = some( x, 2, opts );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ true, true ]
+// returns <ndarray>[ true, true ]
 ```
 
 By default, the function returns an [`ndarray`][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [`ndarray`][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [`ndarray`][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -144,10 +130,7 @@ var opts = {
 
 // Perform reduction:
 var out = some( x, 2, opts );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ [ [ true, true ] ] ]
+// returns <ndarray>[ [ [ true, true ] ] ]
 ```
 
 #### some.assign( x, n, out\[, options] )
@@ -169,12 +152,9 @@ var y = empty( [], {
 
 // Perform reduction:
 var out = some.assign( x, 3, y );
-// returns <ndarray>
+// returns <ndarray>[ true ]
 
 var bool = ( out === y );
-// returns true
-
-var v = y.get();
 // returns true
 ```
 
@@ -194,7 +174,6 @@ By default, the function performs a reduction over all elements in a provided [`
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var empty = require( '@stdlib/ndarray-empty' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -211,13 +190,10 @@ var opts = {
 
 // Perform reduction:
 var out = some.assign( x, 2, y, opts );
-// returns <ndarray>
+// returns <ndarray>[ true, true ]
 
 var bool = ( out === y );
 // returns true
-
-var v = ndarray2array( out );
-// returns [ true, true ]
 ```
 
 </section>
@@ -236,13 +212,8 @@ var v = ndarray2array( out );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.factory;
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
 var fillBy = require( '@stdlib/ndarray-fill-by' );
@@ -260,11 +231,6 @@ var n = scalar2ndarray( 4, {
 });
 var y = some( x, n );
 console.log( y.get() );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -351,11 +317,11 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-some/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/umd
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tree/umd
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 </section>
 
