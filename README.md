@@ -82,10 +82,7 @@ var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
 
 // Perform reduction:
 var out = some( x, 3 );
-// returns <ndarray>
-
-var v= out.get();
-// returns true
+// returns <ndarray>[ true ]
 ```
 
 The function accepts the following arguments:
@@ -103,7 +100,6 @@ By default, the function performs a reduction over all elements in a provided [`
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -115,17 +111,13 @@ var opts = {
 
 // Perform reduction:
 var out = some( x, 2, opts );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ true, true ]
+// returns <ndarray>[ true, true ]
 ```
 
 By default, the function returns an [`ndarray`][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [`ndarray`][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [`ndarray`][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -138,10 +130,7 @@ var opts = {
 
 // Perform reduction:
 var out = some( x, 2, opts );
-// returns <ndarray>
-
-var v = ndarray2array( out );
-// returns [ [ [ true, true ] ] ]
+// returns <ndarray>[ [ [ true, true ] ] ]
 ```
 
 #### some.assign( x, n, out\[, options] )
@@ -163,12 +152,9 @@ var y = empty( [], {
 
 // Perform reduction:
 var out = some.assign( x, 3, y );
-// returns <ndarray>
+// returns <ndarray>[ true ]
 
 var bool = ( out === y );
-// returns true
-
-var v = y.get();
 // returns true
 ```
 
@@ -188,7 +174,6 @@ By default, the function performs a reduction over all elements in a provided [`
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var empty = require( '@stdlib/ndarray-empty' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -205,13 +190,10 @@ var opts = {
 
 // Perform reduction:
 var out = some.assign( x, 2, y, opts );
-// returns <ndarray>
+// returns <ndarray>[ true, true ]
 
 var bool = ( out === y );
 // returns true
-
-var v = ndarray2array( out );
-// returns [ true, true ]
 ```
 
 </section>
