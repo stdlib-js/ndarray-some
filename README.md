@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
+import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-esm/index.mjs';
 ```
 
 #### some( x, n\[, options] )
@@ -211,7 +211,7 @@ import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-arra
 import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
 import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
+import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-esm/index.mjs';
 
 var x = zeros( [ 2, 4, 5 ], {
     'dtype': 'float64'
