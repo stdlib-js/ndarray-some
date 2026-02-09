@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@deno/mod.js';
+import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@deno/mod.js';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-deno/mod.js';
 ```
 
 #### some( x, n\[, options] )
@@ -206,7 +206,7 @@ import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-arra
 import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@deno/mod.js';
 import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@deno/mod.js';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@deno/mod.js';
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@deno/mod.js';
+import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-deno/mod.js';
 
 var x = zeros( [ 2, 4, 5 ], {
     'dtype': 'float64'
