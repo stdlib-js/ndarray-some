@@ -41,25 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-some
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ndarray-some/tags). For example,
-
-```javascript
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@v0.1.1-esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
+var some = require( '@stdlib/ndarray-some' );
 ```
 
 #### some( x, n\[, options] )
@@ -67,7 +74,7 @@ import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/i
 Tests whether at least `n` elements along one or more [`ndarray`][@stdlib/ndarray/ctor] dimensions are truthy.
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+var array = require( '@stdlib/ndarray-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -92,7 +99,7 @@ The function accepts the following options:
 By default, the function performs a reduction over all elements in a provided [`ndarray`][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+var array = require( '@stdlib/ndarray-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -110,7 +117,7 @@ var out = some( x, 2, opts );
 By default, the function returns an [`ndarray`][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [`ndarray`][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [`ndarray`][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
+var array = require( '@stdlib/ndarray-array' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -131,8 +138,8 @@ var out = some( x, 2, opts );
 Tests whether at least `n` elements along one or more [`ndarray`][@stdlib/ndarray/ctor] dimensions are truthy and assigns the results to an output [`ndarray`][@stdlib/ndarray/ctor].
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
-import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
+var array = require( '@stdlib/ndarray-array' );
+var empty = require( '@stdlib/ndarray-empty' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -165,8 +172,8 @@ The function accepts the following `options`:
 By default, the function performs a reduction over all elements in a provided [`ndarray`][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
 ```javascript
-import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
-import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
+var array = require( '@stdlib/ndarray-array' );
+var empty = require( '@stdlib/ndarray-empty' );
 
 // Create an input ndarray:
 var x = array( [ [ [ 1.0, 0.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 0.0, 6.0 ] ] ] );
@@ -205,18 +212,13 @@ var bool = ( out === y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import some from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-some@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+var fillBy = require( '@stdlib/ndarray-fill-by' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var some = require( '@stdlib/ndarray-some' );
 
 var x = zeros( [ 2, 4, 5 ], {
     'dtype': 'float64'
@@ -229,10 +231,6 @@ var n = scalar2ndarray( 4, {
 });
 var y = some( x, n );
 console.log( y.get() );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -256,7 +254,7 @@ console.log( y.get() );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -286,8 +284,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/ndarray-some.svg
 [npm-url]: https://npmjs.org/package/@stdlib/ndarray-some
 
-[test-image]: https://github.com/stdlib-js/ndarray-some/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/ndarray-some/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/ndarray-some/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/ndarray-some/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/ndarray-some/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/ndarray-some?branch=main
@@ -319,11 +317,11 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-some/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/esm
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/esm
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tree/esm
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 </section>
 
